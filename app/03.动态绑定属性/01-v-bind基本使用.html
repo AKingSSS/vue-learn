@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <img v-bind:src="url" alt="">
+    <img :src="url" alt="">
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        data:{
+            url:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600177254964&di=ecb88bd6c03de1e0e62f094832e64b52&imgtype=0&src=http%3A%2F%2Fwx1.sinaimg.cn%2Fcrop.152.0.907.509.1000%2F006CcH6gly1fo0swoymtej30xr0e6q4g.jpg"
+        }
+    })
+</script>
+</body>
+</html>
