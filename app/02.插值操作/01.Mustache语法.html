@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{message}}</h2>
+    <h2>{{message}}, Python大星</h2>
+    <!--直接拼接在一起。mustache 语法除了直接写变量，还可以写简答的表达式-->
+    <h2>{{firstname + lastname}}</h2>
+    <h2>{{firstname + " " + lastname}}</h2>
+    <h2>{{num * 2}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "hello",
+            firstname: "john",
+            lastname: "smith",
+            num: 100
+        }
+    })
+</script>
+
+</body>
+</html>
