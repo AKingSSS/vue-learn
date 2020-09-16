@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--监听所有键帽点击事件 @keyup 是@v-on:click的缩写-->
+    <input type="text" @keyup="keyup">
+    <!--监听回车键的事件-->
+    <input type="text" @keyup.enter="keyup">
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        methods:{
+            keyup:function () {
+                console.log("keyup")
+            }
+        }
+    })
+</script>
+</body>
+</html>

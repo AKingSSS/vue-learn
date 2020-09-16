@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">{{message}}</div>
+<script src="../js/vue.js"></script>
+<script>
+    // 1、const 修饰的标志符，不能修改
+/*    const num = 10;
+    num = 100*/
+    // 2、const 修饰的标志符，必须赋值
+    // 3、常量的含义是指向的对象不能修改，但是可以改变对象内部的属性
+    const obj = {
+        name:"why",
+        age:100
+    }
+    obj.name = "Python大星"
+
+</script>
+
+</body>
+</html>

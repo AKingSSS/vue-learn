@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <form action="toutiao">
+        <input type="submit" value="提交" @click.prevent="submitClick">
+    </form>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        methods:{
+            submitClick:function () {
+                console.log("submitClick")
+            }
+        }
+    })
+</script>
+</body>
+</html>

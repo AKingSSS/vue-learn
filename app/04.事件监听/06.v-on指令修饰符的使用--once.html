@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--只执行一次-->
+    <input type="text" @keyup="keyup">
+    <button @click.once="onceClick">按钮</button>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        methods:{
+            keyup:function () {
+                console.log("keyup");
+            },
+            onceClick:function () {
+                console.log("once");
+            }
+        }
+    })
+</script>
+</body>
+</html>

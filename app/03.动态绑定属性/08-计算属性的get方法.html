@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--不需要括号-->
+    <h2>{{totalAmount}}</h2>
+    <h2>{{totalAmount}}</h2>
+    <h2>{{totalAmount}}</h2>
+    <h2>{{getTotalAmount()}}</h2>
+    <h2>{{getTotalAmount()}}</h2>
+    <h2>{{getTotalAmount()}}</h2>
+    <h2>{{getTotalAmount()}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            greet: 'hello',
+            books: [
+                {name: "Java 从入门到放弃", price: 100},
+                {name: "Python 从入门到放弃", price: 80},
+                {name: "Go 从入门到放弃", price: 90},
+            ]
+        },
+        // 属性计算，一般没有set方法，只读属性，执行一次
+        computed: {
+            totalAmount: {
+                get: function () {
+                    let amount = 0;
+                    for (let book of this.books) {
+                        amount += book.price;
+                    }
+                    console.log("totalAmount")
+                    return amount;
+                },
+                set: function () {
+                    console.log("-------")
+                }
+            }
+        },
+        // 注意是methods，复数
+        methods: {
+            getTotalAmount: function () {
+                let amount = 0;
+                for (let book of this.books) {
+                    amount += book.price;
+                }
+                console.log("getTotalAmount")
+                return amount;
+            }
+        }
+    })
+</script>
+</body>
+</html>

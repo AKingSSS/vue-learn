@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--事件调用没有参数，可以省略括号-->
+    <button @click="btnClick1()">按钮1</button>
+    <button @click="btnClick1">按钮1</button>
+
+    <!--有参数-->
+    <button @click="btnClick2('Python大星')">按钮2</button>
+    <!--打印undefined-->
+    <button @click="btnClick2()">按钮2</button>
+    <button @click="btnClick2">按钮2</button>
+
+    <!--$event获取浏览器的 event 对象-->
+    <button @click="btnClick3('Python大星', $event)">按钮3</button>
+
+
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            counter: 0
+        },
+        methods: {
+            btnClick1: function () {
+
+            },
+            btnClick2: function (name) {
+                console.log("--------" + name);
+            },
+            btnClick3: function (name, event) {
+                console.log("--------" + name);
+                console.log("--------" + event);
+            },
+
+        }
+    })
+</script>
+</body>
+</html>
