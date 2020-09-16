@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--可以在computed中做判断-->
+    <span v-if="isShow">用户名</span>
+    <span v-else>邮箱</span>
+    <input type="text">
+    <button @click="change">切换</button>
+    <button @click="isShow=!isShow">切换</button>
+
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            isShow: true,
+            score:99
+        },
+        methods:{
+            change:function () {
+                this.isShow = !this.isShow;
+            }
+        }
+    })
+</script>
+</body>
+</html>
