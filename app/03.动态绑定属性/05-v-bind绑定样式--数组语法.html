@@ -12,22 +12,19 @@
 </head>
 <body>
 <div id="app">
-   <ul>
-       <a v-on:click="colorChange(index)" v-for="(b,index) in books" v-bind:class="{active:index==currentIndex}" >
-           <li >{{b}}</li>
-       </a>
-   </ul>
+    <h2 :style="[colorStyle,sizeStyle]">{{message}}</h2>
 </div>
 <script src="../js/vue.js"></script>
 <script>
     const app = new Vue({
         el: "#app",
         data: {
-            books: ["Java","Python","Go"],
-            currentIndex:0
+            message: 'Python大星',
+            colorStyle: {backgroundColor:'red'},
+            sizeStyle: {fontSize:"100px"}
         },
         methods: {
-            colorChange:function (index) {
+            colorChange: function (index) {
                 this.currentIndex = index;
             }
         }

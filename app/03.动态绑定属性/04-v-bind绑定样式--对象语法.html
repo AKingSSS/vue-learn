@@ -12,22 +12,21 @@
 </head>
 <body>
 <div id="app">
-   <ul>
-       <a v-on:click="colorChange(index)" v-for="(b,index) in books" v-bind:class="{active:index==currentIndex}" >
-           <li >{{b}}</li>
-       </a>
-   </ul>
+    <!--<h2 :style="{key(属性名): value(属性值)}">{{message}}</h2>-->
+    <!--如果 50px 不加单引号，会被vue认为是变量，key:value 这种模式，key可不加，value需要加单引号-->
+    <h2 :style="{fontSize: finalSize + 'px',backgroundColor: finalColor}">{{message}}</h2>
 </div>
 <script src="../js/vue.js"></script>
 <script>
     const app = new Vue({
         el: "#app",
         data: {
-            books: ["Java","Python","Go"],
-            currentIndex:0
+            message: 'Python大星',
+            finalSize: 100,
+            finalColor:'red'
         },
         methods: {
-            colorChange:function (index) {
+            colorChange: function (index) {
                 this.currentIndex = index;
             }
         }

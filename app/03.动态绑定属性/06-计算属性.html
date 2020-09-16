@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{greet + " " + message}}</h2>
+    <h2>{{greet}} {{message}}</h2>
+    <h2>{{greetSb()}}</h2>
+    <!--不需要括号-->
+    <h2>{{greeting}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            greet: 'hello',
+            message: 'Python大星'
+        },
+        // 属性计算，默认名字为属性名，默认名词，使用时不需要加括号
+        computed:{
+          greeting:function (){
+              return (this.greet + " " + this.message);
+          }
+        },
+        // 方法名默认动词结合
+        methods:{
+            greetSb:function () {
+                return (this.greet + " " + this.message);
+            }
+        }
+    })
+</script>
+</body>
+</html>
