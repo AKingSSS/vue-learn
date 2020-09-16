@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--不需要括号-->
+    <h2>{{totalAmount1}}</h2>
+    <h2>{{totalAmount2}}</h2>
+    <h2>{{totalAmount3}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            greet: 'hello',
+            books: [
+                {name:"Java 从入门到放弃",price:100},
+                {name:"Python 从入门到放弃",price:80},
+                {name:"Go 从入门到放弃",price:90},
+            ]
+        },
+        // 属性计算，默认名字为属性名，默认名词，使用时不需要加括号
+        computed:{
+          totalAmount1:function (){
+              let amount = 0;
+              for (let i = 0; i < this.books.length; i++) {
+                  amount += this.books[i].price
+              }
+              return amount;
+          },
+            totalAmount2: function (){
+                let amount = 0;
+                for(let i in this.books) {
+                    amount += this.books[i].price;
+                }
+                return amount;
+            },
+            totalAmount3: function (){
+                let amount = 0;
+                for(let book of this.books) {
+                    amount += book.price;
+                }
+                return amount;
+            }
+        }
+    })
+</script>
+</body>
+</html>
