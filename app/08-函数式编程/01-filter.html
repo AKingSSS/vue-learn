@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const nums = [10, 5, 34, 2, 45, 11]
+    // 过滤数组
+    let nums1 = nums.filter(function (n) {
+        return n < 10;
+    })
+    // 每个数乘以2
+    let nums2 = nums.map(function (n) {
+        return n * 2;
+    })
+    //
+    let sum = nums.reduce(function (previousValue, n) {
+        return previousValue +  n;
+    }, 0)
+    // 连写
+    let sum2 = nums.filter(function (n) {
+        return n < 10;
+    }).map(function (n) {
+        return n * 2;
+    }).reduce(function (previousValue, n) {
+        return previousValue +  n;
+    }, 0)
+
+    console.log(nums1);
+    console.log(nums2);
+    console.log(sum);
+    console.log(sum2);
+</script>
+</body>
+</html>
