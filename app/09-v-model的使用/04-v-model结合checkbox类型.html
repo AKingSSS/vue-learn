@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--&lt;!&ndash;1、checkbox 单选框&ndash;&gt;
+    <label for="">
+        <input type="checkbox" id="agree" v-model="isAgree"> 同意协议
+    </label>
+    <h2>选择的是{{isAgree}}</h2>
+    &lt;!&ndash;需要绑定&ndash;&gt;
+    <button :disabled="!isAgree">下一步</button>-->
+
+    <!--2、checkbox 多选框-->
+    <label for="" v-for="h in hobby">
+        <!--v-bind:value 引号中的 h 才能被识别，否则是字符串-->
+        <input type="checkbox" :value="h" v-model="myHobby"> {{h}}
+    </label>
+    <h2 v-if="myHobby.length">{{myHobby}}</h2>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    /**
+     *  new Vue(对象类型)
+     *  双花括号:执行表达式,将表达式的结果 输出到当前调用的元素的innerHTML中
+     */
+    const app = new Vue({
+        el: "#app",// 用于挂载要管理的元素
+        data: { // 定义数据
+            hobby: ['篮球','羽毛球','乒乓球','足球'],
+            myHobby:[]
+        }
+    })
+</script>
+
+</body>
+</html>
