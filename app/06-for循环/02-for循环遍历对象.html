@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--未使用下标值-->
+    <h2 v-for="value in info">{{value}}</h2>
+    <!--key : value-->
+    <h2 v-for="(value,key) in info">{{key}}: {{value}}</h2>
+    <!--key : value: index-->
+    <h2 v-for="(value,key,index) in info">{{key}}: {{value}}: {{index}}</h2>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        data:{
+            info:{
+                name:'Python大星',
+                age:10,
+                hobby:'吃饭睡觉打豆豆'
+            }
+        }
+    })
+</script>
+</body>
+</html>
