@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(video,index) in videos" :class="{active:index==currentIndex}"
+            @click="colorChange(index)">{{video}}
+        </li>
+    </ul>
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            videos: ['隐秘的角落', '十日游戏', '沉默的真相'],
+            currentIndex: 0
+        },
+        methods: {
+            colorChange: function (index) {
+                this.currentIndex = index
+            }
+        }
+    })
+</script>
+</body>
+</html>

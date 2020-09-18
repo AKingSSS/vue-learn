@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--v-bind 绑定属性, 对象用单大花括号-->
+    <h2 v-bind:class="{active:isActive}">{{message}}</h2>
+    <!--:style="{color:red}" 错误写法， red 会被识别为变量，需要加引号才能被识别为字符串-->
+    <h2 :style="{color:'red'}">{{message}}</h2>
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "Python 大星",
+            isActive: true
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            width: 160px;
+            height: 160px;
+            background: #D45F10;
+            border: 1px solid #D45F10;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background: #47EE26;
+            margin: 30px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--stop 阻止事件冒泡-->
+    <div class="outer" @click="outerClick">
+        <div class="inner" @click="innerClick">
+            <button @click.stop="btnClick">阻止事件冒泡</button>
+        </div>
+    </div>
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+        },
+        methods:{
+            outerClick:function () {
+                console.log("触发了outer点击事件")
+            },
+            innerClick:function () {
+                console.log("触发了inner点击事件")
+            },
+            btnClick:function () {
+                console.log("触发了按钮点击事件")
+            },
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--v-show（display: none;）和v-if（不存在dom中）的区别-->
+    <h2 v-if="score > 90" id="v-if">你的成绩等级：A</h2>
+    <h2 v-show="score > 90" id="v-show">你的成绩等级：A</h2>
+
+
+
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            score: 55
+        }
+    })
+</script>
+</body>
+</html>

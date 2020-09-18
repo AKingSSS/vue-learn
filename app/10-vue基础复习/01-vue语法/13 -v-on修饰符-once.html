@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--只触发一次-->
+    <button @click.once="once">按钮</button>
+
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+        },
+        methods:{
+            once:function () {
+                console.log("once")
+            }
+        }
+    })
+</script>
+</body>
+</html>

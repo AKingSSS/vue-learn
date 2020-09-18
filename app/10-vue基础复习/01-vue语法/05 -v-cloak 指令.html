@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!-- v-cloak 解决网络延迟导致数据加载缓慢屏幕闪动的问题-->
+    <!--未加载之前有 v-cloak 属性，加载后消失，可以通过 css 控制{{}}的显示问题-->
+    <h2 v-cloak>{{message}}</h2>
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        data:{
+            message: 'Python大星'
+        }
+    })
+</script>
+</body>
+</html>

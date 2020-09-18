@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--v-bind 绑定属性，非简写模式-->
+    <a v-bind:href="url">click me</a>
+    <!--简写模式-->
+    <a :href="url">click me</a>
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        data:{
+            url:"https://www.toutiao.com"
+        }
+    })
+</script>
+</body>
+</html>

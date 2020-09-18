@@ -20,6 +20,12 @@ const app = new Vue({
         isDisabled: false,
     },
     methods: {
+        getPrice: function (value) {
+            return '¥' + Number(value).toFixed(2);
+        },
+        remove: function (index) {
+            this.books.splice(index, 1);
+        },
         add: function (index) {
             this.books[index].count++;
         },
@@ -28,22 +34,18 @@ const app = new Vue({
                 this.books[index].count--;
             }
         },
-        remove: function (index) {
-            console.log("index = " + index);
-            this.books.splice(index, 1);
-            console.log(this.books);
-        },
-        // 截取当前数据到小数点后两位
-        numFilter: function (value) {
-            const realVal = parseFloat(value).toFixed(2);
-            return '¥' + realVal;
-        },
-        getAmount: function () {
-            let amount = 0;
+        getAmountSum: function () {
+            let sum = 0;
             for (let book of this.books) {
-                amount += book.price * book.count;
+                sum += book.price * book.count;
             }
-            return amount;
+            return sum;
         }
     },
+    // 过滤器，复数加s，加s，加s，可设置多个过滤器
+    filters: {
+        formatPrice: function (price) {
+            return Number(price).toFixed(2)
+        }
+    }
 })

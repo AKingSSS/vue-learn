@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--将 html 代码渲染到页面中，比如说模板页面-->
+    <!--使用v-指令，引号中会视为属性或者方法，去js中找，不会视为字符串-->
+    <h2 v-html="url"></h2>
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        data:{
+            url: '<a href="https://www.toutiao.com" >今日头条</a>'
+        }
+    })
+</script>
+</body>
+</html>

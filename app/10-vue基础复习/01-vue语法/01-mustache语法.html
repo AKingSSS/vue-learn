@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--{{}} 使用在内容上，不能在属性值上使用-->
+    <img v-bind:src="url" />
+    <img :src="url" />
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:"#app",
+        data:{
+            url:'https://mjz.sanguosha.com/upload/image/66884d4f628b68a4d1b24a586cefaa9b.jpg'
+        }
+    })
+</script>
+</body>
+</html>

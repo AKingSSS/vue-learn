@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    // 和methods不同，不需要加括号，自动get
+    <h2>书的总价：{{booksAmount}}</h2>
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            books:[10,21,12,12]
+        },
+        computed:{
+            booksAmount:function () {
+                let amount = 0;
+                // 注意 let 不要省略
+                for(let book of this.books) {
+                    amount += book
+                }
+                return amount;
+            }
+        }
+    })
+</script>
+</body>
+</html>

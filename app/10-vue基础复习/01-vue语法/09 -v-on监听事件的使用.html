@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+   <h2 :class="{active:isActive}">{{message}}</h2>
+    <button @click="colorChange">点我一下</button>
+</div>
+<script src="../../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: 'Python大星',
+            isActive: false
+        },
+        methods:{
+            colorChange:function () {
+                this.isActive = !this.isActive;
+            }
+        }
+    })
+</script>
+</body>
+</html>
