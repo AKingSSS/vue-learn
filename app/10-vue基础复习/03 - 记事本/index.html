@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" @keyup.enter="enter" placeholder="请输入任务" v-model="task">
+    <ul>
+        <li v-for="(note, index) in notes">
+            {{index + 1}} {{note}}
+            <button @click="remove(index)">X</button>
+        </li>
+    </ul>
+    <h2>
+        {{notes.length}} items left
+        <button @click="clear">clear</button>
+    </h2>
+</div>
+<script src="../../js/vue.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
