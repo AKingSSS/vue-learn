@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpn1></cpn1>
+</div>
+
+<!--组件模板抽离的方法1-->
+<!--<script type="text/x-template" id="cpn">
+    <div>
+        <h2>组件化开发</h2>
+        <h3>组件模板抽离的方法1</h3>
+    </div>
+</script>-->
+<!--组件模板抽离的方法2-->
+<template id="cpn">
+    <div>
+        <h2>组件化开发</h2>
+        <h3>组件模板抽离的方法2</h3>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "Python大星"
+        },
+        components: {
+            "cpn1":{
+                template:'#cpn'
+            }
+        }
+    })
+</script>
+</body>
+</html>

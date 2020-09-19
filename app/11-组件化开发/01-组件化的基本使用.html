@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--3、使用组件-->
+    <my-cpn></my-cpn>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    // 1、创建组件构造器对象（原始方式）
+    const cpn = Vue.extend({
+        template: `
+        <div>
+            <h2>一、Vue 组件化开发</h2>
+            <h3>1、组件化的基本使用</h3>
+        </div>
+        `
+    });
+    // 2、注册组件, kebab-case (短横线分隔命名)
+    // camelCase (驼峰命名法) 的 prop 名需要使用其等价的 kebab-case (短横线分隔命名) 命名
+    // 注册组件命名时尽量避免使用数字，更不要将数字放到一个 “词” 的中间。
+    Vue.component('my-cpn', cpn)
+    // 组件必须挂载在el下
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "Python大星"
+        }
+    });
+</script>
+</body>
+</html>

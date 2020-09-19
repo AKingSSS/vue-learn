@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--3、使用组件-->
+    <my-cpn></my-cpn>
+</div>
+
+<div id="app2">
+    <!--3、使用组件-->
+    <my-cpn></my-cpn>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    // 1、创建组件构造器对象
+    const cpn = Vue.extend({
+        template: `
+        <div>
+            <h2>一、Vue 组件化开发</h2>
+            <h3>1、组件化的基本使用</h3>
+        </div>
+        `
+    });
+    // 2、注册组件, 全局组件（意味着可以在多个 vue 实例下使用），component 不是复数
+    Vue.component('my-cpn', cpn)
+    // 组件必须挂载在 el 上
+    const app = new Vue({
+        el:"#app",
+        data:{
+            message:"Python大星"
+        }
+    });
+
+    const app2 = new Vue({
+        el:"#app2",
+        data:{
+            message:"Python大星"
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--1、将父中的数据绑定到子中，如果不用vue 指令，会被识别为字符串-->
+    <!--<cpn audience="message" movies="movies"></cpn>-->
+    <cpn :audience="message" :movies="movies"></cpn>
+</div>
+
+<!--组件模板抽离的方法2-->
+<template id="cpn">
+    <!--3、在子组件中使用父组件的数据-->
+    <div>
+        <h2>观众：{{audience}}</h2>
+        <ul>
+            <li v-for="m in movies">{{m}}</li>
+        </ul>
+
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: 'Python大星',
+            movies: ['海贼王', '火影', '龙珠']
+        },
+        components: {
+            cpn: {
+                template: '#cpn',
+                data() {
+                    return {}
+                },
+                methods: {},
+                // 2、属性绑定
+                // 写法 ① ：字符串数组
+                // props: ['audience', 'movies']
+                // 写法 ② ： 对象
+                /*  props: {
+                    audience: String,
+                    movies: Array
+                },*/
+                // 可以提供类型、默认值和是否必须
+                props: {
+                    audience: {
+                        // 多个类型
+                        type: [String, Number],
+                        default: '十三',
+                        required: true
+                    },
+                    movies: {
+                        type: Array,
+                        // 默认值需要传一个函数
+                        // default:[],
+                        default() {
+                            return [];
+                        },
+                        required: false
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

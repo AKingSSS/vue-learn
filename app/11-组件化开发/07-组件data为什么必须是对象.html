@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpn></cpn>
+    <cpn></cpn>
+    <cpn></cpn>
+</div>
+
+<!--组件模板抽离的方法2-->
+<template id="cpn">
+    <div>
+        <h2>当前的数：{{counter}}</h2>
+        <button @click="add">+</button>
+        <button @click="sub">-</button>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    // 组件中的数据和方法在  Vue.component 中实现
+    Vue.component('cpn', {
+        template: '#cpn',
+/*        data: function () {
+            // 返回一个对象
+            return {
+                counter: 0
+            }
+        },*/
+        data() {
+            return {
+                counter: 0
+            }
+        },
+        methods: {
+            add: function () {
+                this.counter++;
+            },
+            // 简写模式
+            sub() {
+                this.counter--;
+            }
+        }
+    })
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "Python大星"
+        }
+    })
+</script>
+</body>
+</html>
