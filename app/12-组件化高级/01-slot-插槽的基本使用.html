@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpn></cpn>
+    <cpn>
+        <button>按钮</button>
+    </cpn>
+    <cpn>
+        <h2>简单</h2>
+        <button>按钮</button>
+    </cpn>
+</div>
+<template id="cpn">
+    <div>
+        <h2>slot 插槽使用</h2>
+        <!--插槽中的默认值-->
+        <slot> <button>按钮</button></slot>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const cpn = {
+        template:'#cpn'
+    }
+    const app = new Vue({
+        el:"#app",// 用于挂载要管理的元素
+        data:{ // 定义数据
+            message:"Python大星"
+        },
+        components: {
+            cpn: cpn
+        }
+    });
+
+
+</script>
+</body>
+</html>
