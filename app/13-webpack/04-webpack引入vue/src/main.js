@@ -11,15 +11,17 @@ import {height, width} from "./js/info.js";
 require("./css/normal.css")
 // 依赖 less 文件
 require("./css/special.less")
-document.writeln("<h>hello,Python大星</h>")
+// document.writeln("<h>hello,Python大星</h>")
 
 // 使用 vue 进行开发
 import Vue from 'vue'
+// import App from './vue/app'
+import App from "./vue/App";
 
-const  app = new Vue({
-    el:'#app',
-    data:{
-        message:'Python大星'
+const app = new Vue({
+    el: '#app',
+    template: "<App/>",
+    components: {
+        App
     }
-
 })

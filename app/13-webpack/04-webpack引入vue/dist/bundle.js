@@ -659,9 +659,13 @@ var _vue = __webpack_require__(6);
 
 var _vue2 = _interopRequireDefault(_vue);
 
+var _App = __webpack_require__(9);
+
+var _App2 = _interopRequireDefault(_App);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _require = __webpack_require__(9),
+var _require = __webpack_require__(10),
     add = _require.add,
     mul = _require.mul;
 
@@ -670,20 +674,22 @@ console.log(mul(10, 20));
 console.log(mul(_info.height, _info.width));
 
 // 依赖 css 文件
-__webpack_require__(10);
+__webpack_require__(11);
 // 依赖 less 文件
-__webpack_require__(14);
-document.writeln("<h>hello,Python大星</h>");
+__webpack_require__(15);
+// document.writeln("<h>hello,Python大星</h>")
 
 // 使用 vue 进行开发
+
+// import App from './vue/app'
 
 
 var app = new _vue2.default({
     el: '#app',
-    data: {
-        message: 'Python大星'
+    template: "<App/>",
+    components: {
+        App: _App2.default
     }
-
 });
 
 /***/ }),
@@ -12971,6 +12977,31 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    template: "\n    <div>\n    <h2>{{message}}</h2>\n    <button @click=\"btnClick\">\u70B9\u6211</button>\n    </div>\n    ",
+    data: function data() {
+        return {
+            message: 'Hello Python大星'
+        };
+    },
+
+    methods: {
+        btnClick: function btnClick() {
+            console.log("btnClick");
+        }
+    }
+};
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 function add(num1, num2) {
     return num1 + num2;
 }
@@ -12986,11 +13017,11 @@ module.exports = {
 };
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(2);
-            var content = __webpack_require__(11);
+            var content = __webpack_require__(12);
 
             content = content.__esModule ? content.default : content;
 
@@ -13010,13 +13041,13 @@ var update = api(content, options);
 module.exports = content.locals || {};
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
 // Imports
-var urlEscape = __webpack_require__(12);
-var ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(13));
+var urlEscape = __webpack_require__(13);
+var ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(14));
 
 // Module
 exports.push([module.i, "body {\r\n    /*background-color: #D45F10;*/\r\n    background: url(" + ___CSS_LOADER_URL___0___ + ");\r\n}", ""]);
@@ -13024,7 +13055,7 @@ exports.push([module.i, "body {\r\n    /*background-color: #D45F10;*/\r\n    bac
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13050,17 +13081,17 @@ module.exports = function escape(url) {
 };
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/vue3.9f8182fd.png";
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(2);
-            var content = __webpack_require__(15);
+            var content = __webpack_require__(16);
 
             content = content.__esModule ? content.default : content;
 
@@ -13080,7 +13111,7 @@ var update = api(content, options);
 module.exports = content.locals || {};
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
