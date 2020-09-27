@@ -1,0 +1,1 @@
+npm install babel-loader@7 babel-core babel-preset-es2015  --save-dev
