@@ -431,29 +431,46 @@ function toComment(sourceMap) {
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_info_js__ = __webpack_require__(4);
-const {add, mul} = __webpack_require__(3)
+
+
+var _info = __webpack_require__(3);
+
+var _require = __webpack_require__(4),
+    add = _require.add,
+    mul = _require.mul;
 
 console.log(add(10, 20));
 console.log(mul(10, 20));
-console.log(mul(__WEBPACK_IMPORTED_MODULE_0__js_info_js__["a" /* height */], __WEBPACK_IMPORTED_MODULE_0__js_info_js__["b" /* width */]));
-
-
-
+console.log(mul(_info.height, _info.width));
 
 // 依赖 css 文件
-__webpack_require__(5)
+__webpack_require__(5);
 // 依赖 less 文件
-__webpack_require__(9)
-document.writeln("<h>hello,Python大星</h>")
+__webpack_require__(9);
+document.writeln("<h>hello,Python大星</h>");
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var height = exports.height = 15;
+var width = exports.width = 10;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 function add(num1, num2) {
     return num1 + num2;
@@ -465,21 +482,9 @@ function mul(num1, num2) {
 
 // common js
 module.exports = {
-    add,
-    mul
-}
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return height; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return width; });
-let height = 15
-let width = 10
-
-
+    add: add,
+    mul: mul
+};
 
 /***/ }),
 /* 5 */
