@@ -1,0 +1,14 @@
+1-node 安装
+
+2-webpack 安装
+
+3-vuecli安装
+注意：
+npm install -g @vue/cli@3.2.1 // 安装的 vue-cli3
+npm install @vue/cli-init -g
+
+4-命令
+vue init webpack vuecli2test
+
+5-项目介绍
+① package.json
