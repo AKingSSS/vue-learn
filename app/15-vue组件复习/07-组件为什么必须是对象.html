@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+</div>
+<tempalte id="cpn">
+    <div>
+        <p>{{counter}}</p>
+        <button @click="add()">+</button>
+        <button @click="sub()">-</button>
+    </div>
+</tempalte>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        components: {
+            cpn: {
+                template: '#cpn'
+            },
+            data: {
+                counter: 1
+            },
+            methods: {
+                add() {
+                    this.counter++;
+                },
+                sub() {
+                    this.counter--;
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

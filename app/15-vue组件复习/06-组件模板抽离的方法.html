@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpn></cpn>
+</div>
+<template id="cpn">
+    <div>
+        <ul>
+            <li v-for="b in books">{{b}}</li>
+        </ul>
+    </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "Python大星"
+        },
+        components: {
+            cpn: {
+                template: '#cpn',
+                data() {
+                    return {
+                        books: ['Vue', 'React', 'Angular', 'Flutter']
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

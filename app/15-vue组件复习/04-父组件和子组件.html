@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <father_cpn></father_cpn>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    const son_cpn = Vue.extend({
+        template: `
+        <div><span>{{sonMsg}}</span></div>
+        `,
+        data() {
+            return {
+                sonMsg: '我是子组件的内容'
+            }
+        }
+    });
+
+    const father_cpn = Vue.extend({
+       template: `
+       <div>
+            <p>{{fatherMsg}}</p>
+            <son_cpn></son_cpn>
+       </div>
+       ` ,
+        components: {
+            son_cpn: son_cpn
+        },
+        data() {
+           return {
+               fatherMsg: '我是父组件的内容'
+           }
+        },
+    });
+    const app = new Vue({
+        el:"#app",
+        components: {
+            father_cpn: father_cpn
+        }
+    })
+</script>
+</body>
+</html>

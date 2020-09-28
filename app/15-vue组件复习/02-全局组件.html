@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--3、使用组件-->
+    <cpn/>
+</div>
+<div id="app2">
+    <!--3、使用组件-->
+    <cpn/>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+    // 1、创建组件构造器
+    const cpn = Vue.extend({
+        template: `
+        <div><p>{{message}}</p></div>
+        `,
+        data() {
+            return {
+                message: "Python大星"
+            }
+        }
+    });
+    // 2、注册组件（全局组件）
+    Vue.component('cpn', cpn);
+
+    const app = new Vue({
+        el:"#app"
+    });
+    const app2 = new Vue({
+        el:"#app2"
+    });
+</script>
+</body>
+</html>
