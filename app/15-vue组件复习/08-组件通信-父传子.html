@@ -5,6 +5,39 @@
     <title>Title</title>
 </head>
 <body>
+<div id="app">
+    <cpn :movies="movies"></cpn>
+</div>
+<template id="cpn">
+    <div>
+        <ul>
+            <li v-for="(m,index) in movies">{{index + 1}}-《{{m}}》</li>
+        </ul>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
 
+    const app = new Vue({
+        el: "#app",
+        data: {
+            movies: ['三傻大闹宝莱坞', '憨豆先生的假期', '小鬼当家']
+        },
+        components: {
+            cpn: {
+                template: "#cpn",
+                props: {
+                    movies: {
+                        type: Array,
+                        required: true,
+                        default() {
+                            return ['美丽人生'];
+                        }
+                    }
+                }
+            }
+        }
+    })
+</script>
 </body>
 </html>

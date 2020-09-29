@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <son-cpn @papa-click="cpnClick"></son-cpn>
+</div>
+<template id="son">
+    <div>
+        <button @click="sonClick(sonMsg)">子按钮</button>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const sonCpn= {
+        template: "#son",
+            data() {
+            return {
+                sonMsg: 'son'
+            }
+        },
+        methods: {
+            sonClick: function (sonMsg) {
+                console.log("sonClick sendMsg: " + sonMsg)
+                // 短横线
+                this.$emit('papa-click', sonMsg)
+            }
+        }
+    };
+    const app = new Vue({
+        el: "#app",
+        methods: {
+            cpnClick: function (sonMsg) {
+                console.log(sonMsg)
+            }
+        },
+        components: {
+            'son-cpn': sonCpn
+        }
+    })
+</script>
+</body>
+</html>

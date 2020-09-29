@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpn ref="other"></cpn>
+    <button @click="btnClick">按钮</button>
+</div>
+<template id="cpn">
+    <div>
+        <p>{{message}}</p>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const cpn = {
+        template:'#cpn',
+        data() {
+            return {
+                message: "Python大星"
+            }
+        }
+    };
+    const app = new Vue({
+        el:"#app",
+        methods: {
+            btnClick: function () {
+                let msg = this.$refs.other.message;
+                console.log(msg)
+            }
+        },
+        components: {
+            cpn
+        }
+    });
+</script>
+</body>
+</html>

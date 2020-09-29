@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpn></cpn>
+</div>
+
+<template id="cpn">
+    <button @click="btnClick">按钮</button>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const cpn = {
+        template:'#cpn',
+        methods:{
+            btnClick: function() {
+                console.log(this.$parent.message);
+            }
+        }
+    }
+    const app = new Vue({
+        el: "#app",
+        data: {
+            message: "Python大星"
+        },
+        components: {
+            cpn
+        }
+    })
+</script>
+</body>
+</html>
