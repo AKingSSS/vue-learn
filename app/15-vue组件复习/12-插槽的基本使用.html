@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpn></cpn>
+    <cpn>
+        <spn>雄起</spn>
+    </cpn>
+    <cpn>
+        <button>按钮</button>
+    </cpn>
+</div>
+<template id="cpn">
+    <div>
+        <span>Python大星</span>
+        <slot></slot>
+    </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+    const cpn = {
+        template: '#cpn'
+    }
+    const app = new Vue({
+        el: "#app",
+        components: {
+            cpn
+        }
+    })
+</script>
+</body>
+</html>
