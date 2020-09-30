@@ -9,6 +9,7 @@ npm install @vue/cli-init -g
 
 4-命令
 vue init webpack vuecli2test
+vue create vuecli3test
 
 5-项目介绍
 ① package.json
