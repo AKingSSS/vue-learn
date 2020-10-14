@@ -12,10 +12,10 @@
 <script>
 export default {
   name: "Home",
-  /*created() {
+  created() {
     console.log("create");
     document.title="首页";
-  }*/
+  }
 }
 </script>
 

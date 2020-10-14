@@ -8,10 +8,10 @@
 <script>
 export default {
   name: "About",
-  /*created() {
+  created() {
     console.log("create");
     document.title="关于";
-  }*/
+  }
 }
 </script>
 

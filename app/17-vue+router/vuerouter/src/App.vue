@@ -10,7 +10,9 @@
     <button @click="profileClick">档案</button>
     <router-link :to="'/user/'+userId" tag="button">用户</router-link>
     <router-link :to="{path:'/profile',query:{name:'Python大星',age:18,height:1.88}}" tag="button">档案</router-link>
-    <router-view></router-view>
+    <keep-alive exclude="Profile,User">
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
