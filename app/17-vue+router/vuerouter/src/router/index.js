@@ -25,29 +25,47 @@ const routes = [
   {
     path: '/home',
     component: Home,
+    meta: {
+      title: "首页"
+    },
     children: [
       {
         path: "news",
-        component: HomeNews
+        component: HomeNews,
+        meta: {
+          title: "新闻"
+        },
       }
       ,
       {
         path: "message",
-        component: HomeMessage
+        component: HomeMessage,
+        meta: {
+          title: "消息"
+        },
       }
     ]
   },
   {
     path: '/about',
-    component: About
+    component: About,
+    meta: {
+      title: "关于"
+    },
   },
   {
     path: '/user/:userId',
-    component: User
+    component: User,
+    meta: {
+      title: "用户"
+    },
   },
   {
     path: '/profile',
-    component: Profile
+    component: Profile,
+    meta: {
+      title: "档案"
+    },
   },
 ]
 const router = new Router({
@@ -60,3 +78,9 @@ const router = new Router({
 export default router
 
 // 4.在 main.js 中导入 router
+
+// 前置钩子
+router.beforeEach(((to, from, next) => {
+  document.title = to.meta.title;
+  next();
+}))
