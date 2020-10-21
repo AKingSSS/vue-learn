@@ -1,0 +1,6 @@
+### 一、vuex 管理状态
+#### 1. vuex 插件安装
+```
+npm install vuex --save
+
+```
